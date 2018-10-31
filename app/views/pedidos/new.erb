@@ -1,0 +1,21 @@
+<h1> Novo Pedido </h1>
+
+<%= form_for @pedido do |f| %>
+  <p>
+    <%= f.label :descricao, 'Descrição' %>
+    <%= f.text_field :descricao %>
+  </p>
+  <p>
+    <%= f.label :valor, 'Valor' %>
+    <%= f.number_field :valor, step: 0.01 %>
+  </p>
+  <p>
+    <%= radio_button_tag(:tipo, true) %>
+    <%= label_tag(:tipo_true, "Entrada") %>
+    <%= radio_button_tag(:tipo, false) %>
+    <%= label_tag(:tipo_false, "Saída") %>
+  </p>
+  <p>
+    <%= f.submit 'Salvar'%>
+  </p>
+<% end %>
