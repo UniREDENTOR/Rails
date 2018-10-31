@@ -1,0 +1,22 @@
+<h1> Todos os Pedidos </h1>
+
+<table>
+  <tr>
+    <th>Nº</th>
+    <th>Descrição</th>
+    <th>Valor</th>
+    <th>Tipo</th>
+    <th>Ações</th>
+  </tr>
+  <% @pedidos.each do |p| %>
+    <tr>
+      <td> <%= p.id %> </td>
+      <td> <%= p.descricao %> </td>
+      <td> <%= number_to_currency(p.valor, unit: "R$ ", separator: ",") %> </td>
+      <td> <%= p.tipo_formatado %> </td>
+      <td> <%=  %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Novo Pedido', new_pedido_path %>

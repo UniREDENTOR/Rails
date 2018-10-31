@@ -1,4 +1,8 @@
 class PedidosController < ApplicationController
+  def index
+    @pedidos = Pedido.all
+  end
+
   def new
     @pedido = Pedido.new
   end

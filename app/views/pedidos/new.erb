@@ -10,12 +10,11 @@
     <%= f.number_field :valor, step: 0.01 %>
   </p>
   <p>
-    <%= radio_button_tag(:tipo, true) %>
-    <%= label_tag(:tipo_true, "Entrada") %>
-    <%= radio_button_tag(:tipo, false) %>
-    <%= label_tag(:tipo_false, "Saída") %>
+    <%= f.label :tipo, 'Tipo' %>
+    <%= f. select :tipo, {'Entrada': true, 'Saída': false} %>
   </p>
   <p>
     <%= f.submit 'Salvar'%>
+    <%= link_to 'Voltar', pedidos_path %>
   </p>
 <% end %>
