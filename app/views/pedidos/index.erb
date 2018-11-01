@@ -14,7 +14,10 @@
       <td> <%= p.id %> </td>
       <td> <%= p.descricao %> </td>
       <td> <%= number_to_currency(p.valor, unit: "R$ ", separator: ",") %> </td>
-      <td> <%= link_to 'Excluir', p, method: :delete %> </td>
+      <td>
+        <%= link_to 'Editar', edit_pedido_path(p) %> 
+        <%= link_to 'Excluir', p, method: :delete %>
+      </td>
     </tr>
   <% end %>
 </table>

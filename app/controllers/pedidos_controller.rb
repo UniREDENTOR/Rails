@@ -16,6 +16,19 @@ class PedidosController < ApplicationController
     end
   end
 
+  def edit
+    @pedido = Pedido.find(params[:id])
+  end
+
+  def update
+    @pedido = Pedido.find(params[:id])
+    if @pedido.update(pedido_params)
+      redirect_to pedidos_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
     Pedido.find(params[:id]).destroy
     redirect_to pedidos_path
