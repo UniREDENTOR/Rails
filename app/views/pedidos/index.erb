@@ -1,5 +1,6 @@
-<h1> Pedidos do Dia </h1>
-<%= link_to 'Novo Pedido', new_pedido_path %>
+<%= link_to 'Ver Pedidos de Ontem', pedidos_path(dia: @dia.yesterday) %>
+<h1> Pedidos do Dia <%= @dia.day %> do <%= @dia.month %> </h1>
+<%= link_to 'Ver Pedidos de Amanhã', pedidos_path(dia: @dia.tomorrow) %>
 <table>
   <tr>
     <th>Dia</th>
@@ -26,3 +27,5 @@
     </tr>
   <% end %>
 </table>
+
+<%= link_to 'Novo Pedido', new_pedido_path(dia: params[:dia]) %>
