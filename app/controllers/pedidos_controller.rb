@@ -16,6 +16,11 @@ class PedidosController < ApplicationController
     end
   end
 
+  def destroy
+    Pedido.find(params[:id]).destroy
+    redirect_to pedidos_path
+  end
+
   private
 
   def pedido_params
