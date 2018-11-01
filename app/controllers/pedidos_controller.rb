@@ -4,7 +4,7 @@ class PedidosController < ApplicationController
   end
 
   def new
-    @pedido = Pedido.new
+    @pedido = Pedido.new(data: Date.today, valor: 0.0)
   end
 
   def create
@@ -24,6 +24,6 @@ class PedidosController < ApplicationController
   private
 
   def pedido_params
-    params.require(:pedido).permit(:descricao, :valor, :tipo)
+    params.require(:pedido).permit(:descricao, :valor, :data)
   end
 end

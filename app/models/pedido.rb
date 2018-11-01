@@ -1,7 +1,8 @@
 class Pedido < ApplicationRecord
-  validates :descricao, :valor, presence: true
+  validates :data, :descricao, :valor, presence: true
+  validates :valor, numericality: { greater_than: 0 }
 
-  def tipo_formatado
-    tipo ? 'Entrada' : 'Saída'
+  def data_br
+    data.strftime('%d/%m/%Y')
   end
 end

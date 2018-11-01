@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181031200424) do
+ActiveRecord::Schema.define(version: 20181101170455) do
 
   create_table "pedidos", force: :cascade do |t|
     t.string "descricao"
     t.float "valor"
-    t.boolean "tipo"
+    t.boolean "entregue"
+    t.date "data"
   end
 
 end

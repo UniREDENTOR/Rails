@@ -1,8 +1,8 @@
-<h1> Todos os Pedidos </h1>
+<h1> Pedidos do Dia </h1>
 <%= link_to 'Novo Pedido', new_pedido_path %>
 <table>
   <tr>
-    <th>Data</th>
+    <th>Dia</th>
     <th>Nº</th>
     <th>Descrição</th>
     <th>Valor</th>
@@ -10,7 +10,7 @@
   </tr>
   <% @pedidos.each do |p| %>
     <tr>
-      <td> <%= p.data %> </td>
+      <td> <%= p.data_br %> </td>
       <td> <%= p.id %> </td>
       <td> <%= p.descricao %> </td>
       <td> <%= number_to_currency(p.valor, unit: "R$ ", separator: ",") %> </td>
