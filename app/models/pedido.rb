@@ -5,4 +5,12 @@ class Pedido < ApplicationRecord
   def data_br
     data.strftime('%d/%m/%Y')
   end
+
+  def entregue_to_s
+    entregue ? 'Sim' : 'Não'
+  end
+
+  def entregar
+    update_attribute(:entregue, true)
+  end
 end

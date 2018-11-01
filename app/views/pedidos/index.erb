@@ -6,6 +6,7 @@
     <th>Nº</th>
     <th>Descrição</th>
     <th>Valor</th>
+    <th>Entregue</th>
     <th>Ações</th>
   </tr>
   <% @pedidos.each do |p| %>
@@ -14,9 +15,13 @@
       <td> <%= p.id %> </td>
       <td> <%= p.descricao %> </td>
       <td> <%= number_to_currency(p.valor, unit: "R$ ", separator: ",") %> </td>
+      <td> <%= p.entregue_to_s %> </td>
       <td>
-        <%= link_to 'Editar', edit_pedido_path(p) %> 
+        <%= link_to 'Editar', edit_pedido_path(p) %>
         <%= link_to 'Excluir', p, method: :delete %>
+        <%= unless p.entregue
+          link_to 'Entregar', entregar_pedido_path(p)
+        end %>
       </td>
     </tr>
   <% end %>

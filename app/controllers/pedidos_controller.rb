@@ -29,6 +29,11 @@ class PedidosController < ApplicationController
     end
   end
 
+  def entregar
+    Pedido.find(params[:id]).entregar
+    redirect_to pedidos_path
+  end
+
   def destroy
     Pedido.find(params[:id]).destroy
     redirect_to pedidos_path
