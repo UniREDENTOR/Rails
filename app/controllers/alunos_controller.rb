@@ -4,7 +4,7 @@ class AlunosController < ApplicationController
   end
 
   def new
-    @aluno = Aluno.new
+    @aluno = Aluno.new(nota: 0)
   end
 
   def create
@@ -14,5 +14,11 @@ class AlunosController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    aluno = Aluno.find(params[:id])
+    aluno.destroy
+    redirect_to alunos_path
   end
 end

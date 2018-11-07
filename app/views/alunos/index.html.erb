@@ -5,12 +5,14 @@
     <th> Número </th>
     <th> Nome </th>
     <th> Nota </th>
+    <th> Opções </th>
   </tr>
   <% @alunos.each do |aluno| %>
     <tr>
       <td> <%= aluno.id %> </td>
       <td> <%= aluno.nome %> </td>
       <td> <%= aluno.nota %> </td>
+      <td> <%= link_to 'Apagar', aluno, method: :delete %> </td>
     </tr>
   <% end %>
 </table>
