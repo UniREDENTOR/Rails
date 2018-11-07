@@ -1,0 +1,16 @@
+<h1> Lista de Alunos </h1>
+<%= link_to 'Novo Aluno', new_aluno_path %>
+<table>
+  <tr>
+    <th> Número </th>
+    <th> Nome </th>
+    <th> Nota </th>
+  </tr>
+  <% @alunos.each do |aluno| %>
+    <tr>
+      <td> <%= aluno.id %> </td>
+      <td> <%= aluno.nome %> </td>
+      <td> <%= aluno.nota %> </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,11 @@
+<h1> Novo Aluno </h1>
+<%= form_for @aluno do |f| %>
+  <b> Nome: </b>
+  <%= f.text_field :nome %>
+  <hr>
+  <b> Nota: </b>
+  <%= f.number_field :nota %>
+  <hr>
+  <%= f.submit "Salvar" %>
+<% end %>
+<%= link_to 'Voltar', alunos_path %>
