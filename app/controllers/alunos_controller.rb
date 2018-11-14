@@ -1,4 +1,6 @@
 class AlunosController < ApplicationController
+  before_action :set_aluno, only: [:edit, :update, :destroy]
+
   def index
     @alunos = Aluno.all
   end
@@ -8,7 +10,7 @@ class AlunosController < ApplicationController
   end
 
   def create
-    @aluno = Aluno.new(params.require(:aluno).permit(:nome, :nota))
+    @aluno = Aluno.new(aluno_params)
     if @aluno.save
       redirect_to alunos_path
     else
@@ -16,9 +18,28 @@ class AlunosController < ApplicationController
     end
   end
 
+  def edit;  end
+
+  def update
+    if @aluno.update(aluno_params)
+      redirect_to alunos_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
-    aluno = Aluno.find(params[:id])
-    aluno.destroy
+    @aluno.destroy
     redirect_to alunos_path
+  end
+
+  private
+
+  def set_aluno
+    @aluno = Aluno.find(params[:id])
+  end
+
+  def aluno_params
+    params.require(:aluno).permit(:nome, :nota)
   end
 end

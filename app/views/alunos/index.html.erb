@@ -12,7 +12,10 @@
       <td> <%= aluno.id %> </td>
       <td> <%= aluno.nome %> </td>
       <td> <%= aluno.nota %> </td>
-      <td> <%= link_to 'Apagar', aluno, method: :delete %> </td>
+      <td>
+        <%= link_to 'Editar', edit_aluno_path(aluno) %>
+        <%= link_to 'Apagar', aluno, method: :delete %>
+      </td>
     </tr>
   <% end %>
 </table>
