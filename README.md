@@ -1,4 +1,4 @@
-# Para Rodar
+# Para Executar o Projecto na sua máquina
 
 Ter Instalado:
 
@@ -12,6 +12,8 @@ Ter Instalado:
 
 * bundle install
 
+* rake db:setup
+
 * rails s
 
-* Abrir o navegador e ir para a URL http://localhost:3000
+* Abrir o navegador e digitar a URL http://localhost:3000

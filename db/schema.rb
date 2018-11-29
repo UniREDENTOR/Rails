@@ -12,6 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20181101170455) do
 
+  create_table "alunos", force: :cascade do |t|
+    t.string "nome"
+    t.decimal "nota"
+  end
+
   create_table "pedidos", force: :cascade do |t|
     t.string "descricao"
     t.float "valor"
