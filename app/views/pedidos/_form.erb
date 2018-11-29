@@ -1,0 +1,22 @@
+<% @pedido.errors.messages.each do |campo, erros| %>
+  <li> <%= campo %>: <%= erros %> </li>
+<% end %>
+
+<%= form_for @pedido do |f| %>
+  <p>
+    <%= f.label :data, 'Data' %>
+    <%= f.date_field :data, default: Date.today %>
+  </p>
+  <p>
+    <%= f.label :descricao, 'Descrição' %>
+    <%= f.text_field :descricao %>
+  </p>
+  <p>
+    <%= f.label :valor, 'Valor' %>
+    <%= f.number_field :valor, step: 0.01 %>
+  </p>
+  <p>
+    <%= f.submit 'Salvar'%>
+    <%= link_to 'Voltar', pedidos_path %>
+  </p>
+<% end %>
