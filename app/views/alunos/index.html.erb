@@ -1,21 +1,19 @@
-<h1> Lista de Alunos </h1>
-<%= link_to 'Novo Aluno', new_aluno_path %>
-<table>
+<h1> Alunos </h1>
+<%= form_tag("/alunos", method: "get") do %>
+  <b>Nota: </b>
+  <%= number_field_tag(:nota, params[:nota]) %>
+  <%= submit_tag("Filtrar") %>
+<% end %>
+<table class="table table-bordered">
   <tr>
-    <th> Número </th>
     <th> Nome </th>
     <th> Nota </th>
-    <th> Opções </th>
   </tr>
-  <% @alunos.each do |aluno| %>
+  <% @alunos.each do |aluno|  %>
     <tr>
-      <td> <%= aluno.id %> </td>
       <td> <%= aluno.nome %> </td>
       <td> <%= aluno.nota %> </td>
-      <td>
-        <%= link_to 'Editar', edit_aluno_path(aluno) %>
-        <%= link_to 'Apagar', aluno, method: :delete %>
-      </td>
     </tr>
-  <% end %>
+  <% end  %>
 </table>
+<%= link_to 'Criar', new_aluno_path, class: 'btn btn-primary' %>
