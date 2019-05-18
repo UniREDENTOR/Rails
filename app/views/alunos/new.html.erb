@@ -1,0 +1,12 @@
+<h3> Novo Aluno </h3>
+
+<%= @aluno.errors.first %>
+
+<%= form_for @aluno do |f| %>
+  <b>Nome: </b>
+  <%= f.text_field :nome %>
+  <b>Nota: </b>
+  <%= f.number_field :nota %>
+
+  <%= f.submit "Salvar" %>
+<% end %>

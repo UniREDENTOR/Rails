@@ -1,0 +1,19 @@
+<h1> Alunos </h1>
+<%= form_tag("/alunos", method: "get") do %>
+  <b>Nota: </b>
+  <%= number_field_tag(:nota, params[:nota]) %>
+  <%= submit_tag("Filtrar") %>
+<% end %>
+<table class="table table-bordered">
+  <tr>
+    <th> Nome </th>
+    <th> Nota </th>
+  </tr>
+  <% @alunos.each do |aluno|  %>
+    <tr>
+      <td> <%= aluno.nome %> </td>
+      <td> <%= aluno.nota %> </td>
+    </tr>
+  <% end  %>
+</table>
+<%= link_to 'Criar', new_aluno_path, class: 'btn btn-primary' %>
