@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190323182322) do
+ActiveRecord::Schema.define(version: 20181101170455) do
+
+  create_table "alunos", force: :cascade do |t|
+    t.string "nome"
+    t.decimal "nota"
+  end
+
+  create_table "pedidos", force: :cascade do |t|
+    t.string "descricao"
+    t.float "valor"
+    t.boolean "entregue"
+    t.date "data"
+  end
 
   create_table "personagens", force: :cascade do |t|
     t.string "nome"
@@ -26,5 +38,4 @@ ActiveRecord::Schema.define(version: 20190323182322) do
     t.string "tipo"
     t.index ["personagem_id"], name: "index_poderes_on_personagem_id"
   end
-
 end
