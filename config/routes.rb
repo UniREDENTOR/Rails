@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'home#index'
   resources :pedidos do
     get 'entregar', on: :member
   end
@@ -8,5 +9,4 @@ Rails.application.routes.draw do
   resources :welcome
   resources :elefante
   resources :velha
-  root "welcome#index"
 end

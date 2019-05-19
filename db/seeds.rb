@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+nomes = ['Élisson', 'Valcir', 'Fernanda', 'Marlonn', 'Vagner', 'Gabriel', 'Arthur', 'Ediandro', 'Cesar', 'Bernardo']
+
+tipos = {
+         'Elemental' => ['Pirocinese', 'Hidrocinese', 'Geocinese', 'Aerocinese', 'Criocinese', 'Eletrocinese'],
+         'Físico'    => ['Super-Velocidade', 'Super-Força', 'Elasticidade', 'Memória Muscular', 'Teletransporte', 'Invisilidade'],
+         'Mental'    => ['Telecinese', 'Telepatia', 'Ilusionismo', 'Campo de Força', 'Hipnose', 'Controle Mental']
+        }
+
+
+nomes.each do |nome|
+  personagem = Personagem.create(nome:        nome,
+                                 forca:       rand(1..10),
+                                 resistencia: rand(1..10),
+                                 agilidade:   rand(1..10),
+                                 destreza:    rand(1..10))
+  3.times do
+    tipo = tipos.keys.shuffle.first
+    personagem.poderes.create(tipo: tipo, nome: tipos[tipo].shuffle.first)
+  end
+end

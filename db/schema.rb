@@ -24,4 +24,18 @@ ActiveRecord::Schema.define(version: 20181101170455) do
     t.date "data"
   end
 
+  create_table "personagens", force: :cascade do |t|
+    t.string "nome"
+    t.integer "forca"
+    t.integer "resistencia"
+    t.integer "agilidade"
+    t.integer "destreza"
+  end
+
+  create_table "poderes", force: :cascade do |t|
+    t.integer "personagem_id"
+    t.string "nome"
+    t.string "tipo"
+    t.index ["personagem_id"], name: "index_poderes_on_personagem_id"
+  end
 end
