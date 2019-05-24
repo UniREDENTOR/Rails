@@ -1,8 +1,19 @@
 <h1> Alunos </h1>
-<%= form_tag("/alunos", method: "get") do %>
-  <b>Nota: </b>
-  <%= number_field_tag(:nota, params[:nota]) %>
-  <%= submit_tag("Filtrar") %>
+<%= form_tag('/alunos', method: 'get', class: 'form-inline') do %>
+  <div class="form-group mb-3">
+    <%= select_tag(:campo,
+                    options_for_select([['Nome', 'nome'],
+                                        ['Nota', 'nota']],
+                                        params[:campo]),
+                    class: 'custom-select') %>
+  </div>
+  <div class="form-group mb-3">
+    <%= text_field_tag(:valor,
+                       params[:valor],
+                       class: 'form-control',
+                       placeholder: 'Valor p/ Filtro') %>
+  </div>
+  <%= submit_tag('Filtrar', class: 'btn btn-info mb-3') %>
 <% end %>
 <table class="table table-bordered">
   <tr>

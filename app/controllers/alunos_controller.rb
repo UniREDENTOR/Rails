@@ -1,7 +1,7 @@
 class AlunosController < ApplicationController
   def index
-    if params[:nota].present?
-      @alunos = Aluno.where(nota: params[:nota])
+    if params[:valor].present?
+      @alunos = Aluno.where(params[:campo] => params[:valor])
     else
       @alunos = Aluno.all
     end
