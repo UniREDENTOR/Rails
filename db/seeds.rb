@@ -2941,3 +2941,26 @@ genres = Genre.create([
       name: "Opera"
     }
 ])
+
+media_types = MediaType.create([
+    {
+      id: "1",
+      name: "MPEG audio file"
+    },
+    {
+      id: "2",
+      name: "Protected AAC audio file"
+    },
+    {
+      id: "3",
+      name: "Protected MPEG-4 video file"
+    },
+    {
+      id: "4",
+      name: "Purchased AAC audio file"
+    },
+    {
+      id: "5",
+      name: "AAC audio file"
+    }
+])
