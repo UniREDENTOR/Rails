@@ -1,0 +1,7 @@
+<h3> All Tracks </h3>
+<%=link_to "Create track", new_track_path %>
+<ol>
+    <%@tracks.each do |track|%>
+    <li> <%= link_to track.name, track%></li>
+    <% end %>
+</ol>
