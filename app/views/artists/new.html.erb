@@ -1,0 +1,6 @@
+<h3> New Artist</h3>
+<a href="../"><button > Back </button></a>
+<%= form_for @artist do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit 'Save' %>
+<% end %>
