@@ -1,0 +1,9 @@
+<h3> New Album</h3>
+<%= form_for @album do |f| %>
+    
+    <%= f.text_field :title %>
+    <%= f.text_field :artist_id %>
+
+    <%= f.submit 'Save' %>
+<% end %>
+<b class="text-dark"> <%= link_to "Voltar", "/albums" %> </b>
