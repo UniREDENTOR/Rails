@@ -1,0 +1,7 @@
+<h1>Edit Album</h1>
+<%= form_for @album, :url =>{:action => "update", :id =>@album} do |f| %>
+    <p>Title: <%= f.text_field 'title' %></p>
+    <%= f.submit "Save changes" %>
+<% end %>
+
+<%= link_to 'Back', '/albums'  %>
