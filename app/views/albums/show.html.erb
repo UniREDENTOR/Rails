@@ -1,0 +1,15 @@
+<h3> Showing Album </h3>
+<%= link_to  "Edit", edit_album_path %>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body text-justify">
+    <h5 class="card-title"><%= @album.title %></h5>
+    <h5 class="card-title">Artist : <%= @album.artist.name %></h5>
+    <p class="card-text"><fieldset>
+    <b> ID: </b> <%= @album.id %> <br>
+    <b> Created at: </b> <%= (@album.created_at) %> <br>
+    <b> Updated at: </b> <%= (@album.updated_at) %> <br>
+  </fieldset></p>
+  <b class="text-dark"> <%= link_to "Voltar", "/albums" %> </b>
+  </div>
+</div>
