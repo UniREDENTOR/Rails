@@ -1,0 +1,8 @@
+<h1>Edit Artist</h1>
+
+<%= form_for @artist, :url =>{:action => "update", :id =>@artist} do |f| %>
+    <p>Title: <%= f.text_field 'name' %></p>
+    <%= f.submit "Save changes" %>
+<% end %>
+
+<%= link_to 'Back', :back  %>
