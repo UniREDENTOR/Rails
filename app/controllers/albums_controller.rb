@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+
   def index
       @albums = Album.all
   end
@@ -20,9 +21,26 @@ class AlbumsController < ApplicationController
       end
   end
 
+  def edit
+    @album = Album.find(params[:id])
+  end
+
+  def update
+
+    @album = Album.find(params[:id])
+
+    if @album.update_attributes(album_params)
+      redirect_to @album
+    else
+      render :edit
+    end
+
+  end
 
 private
+
   def album_params
-    params.require(:album).permit(:name)
+    params.require(:album).permit(:tittle, :artist_id)
   end
+
 end
