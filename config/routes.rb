@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   resources :albums
-  root 'artists#index'
+  root 'albums#index'
 end
