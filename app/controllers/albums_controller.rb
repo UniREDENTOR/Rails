@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
-      @albums = Album.find(params[:id])
+      @album = Album.find(params[:id])
   end
 
   def new
@@ -37,10 +37,10 @@ class AlbumsController < ApplicationController
 
   end
 
-private
+  private
 
-  def album_params
-    params.require(:album).permit(:tittle, :artist_id)
+    def album_params
+      params.require(:album).permit(:tittle, :artist_id)
+    end
+
   end
-
-end

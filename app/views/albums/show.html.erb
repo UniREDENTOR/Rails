@@ -7,7 +7,7 @@
   <b> ID: </b> <%= @album.id %> <br>
   <b> Title: </b> <%= @album.title %> <br>
   <b> Artist: </b> <%= @album.artist.name %> <br>
-  <b> Created at: </b> <%= format(@album.created_at) %> <br>
-  <b> Updated at: </b> <%= format(@album.updated_at) %> <br>
+  <b> Created at: </b> <%= format(@album.created_at.strftime("%d/%m/%y %H:%M")) %> <br>
+  <b> Updated at: </b> <%= format(@album.updated_at.strftime("%d/%m/%y %H:%M")) %> <br>
 
 </fieldset>
