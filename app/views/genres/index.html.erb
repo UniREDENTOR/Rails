@@ -1,5 +1,11 @@
 <h3> All Genres </h3>
 
+<%= form_tag("/genres", method: "get") do %>
+  <%= label_tag(:name, "Filter:") %>
+  <%= text_field_tag(:name, params['name']) %>
+  <%= submit_tag("Submit") %>
+<% end %>
+
 <ol>
   <% @genres.each do |genre| %>
     <li> <%= link_to genre.name, genre  %> </li>
