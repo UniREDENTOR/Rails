@@ -1,9 +1,6 @@
 class GenresController < ApplicationController
   def index
-    @genres = Genre.all
-    if params['name'].present?
-      @genres = @genres.where("name LIKE ?", "%#{params['name']}%")
-    end
+    @genres = Genre.filtrar(params['name'])
   end
 
   def show
