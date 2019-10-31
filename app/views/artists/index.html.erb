@@ -1,5 +1,27 @@
-<h3> Desenvolvimento Web 2 </h3>
+<div class="container">
+  <div class="row"><br>
+  </div>
+  <div class="row">
+    <h3> Artist List <span class="badge badge-light"> <%= @artists.count  %> </span></h3>
+  </div>
 
-<p> O Conteúdo da Variável Consulta Será Exibido Abaixo: </p>
+  <%= form_tag("/artists", method: "get") do %>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text">Search for:</label>
+    </div>
+    <%= text_field_tag(:name, params['name'], class: "form-control") %>
+    <div class="input-group-prepend">
+      <%= submit_tag("Search", class: 'btn btn-outline-primary') %>
+    </div>
+  </div>
+<% end %>
 
-<%= @consulta.try(:inspect) %>
+  <div class="row">
+   <ul class="list-group">
+      <% @artists.each do |artist| %>
+        <li class="list-group-item"> <%= link_to artist.name, artist  %> </li>
+      <% end %>
+   </ul>
+  </div>
+</div>
