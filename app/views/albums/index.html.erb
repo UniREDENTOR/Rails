@@ -1,0 +1,36 @@
+
+<div class="container">
+  <div class="row"><br>
+  </div>
+  <div class="row">
+    <h3> Albums List <span class="badge badge-light"> <%= @albums.count  %> </span></h3>
+  </div>
+  <%= form_tag("/albums", method: "get") do %>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text">Search for:</label>
+    </div>
+    <%= text_field_tag(:title, params['title'], class: "form-control") %>
+    <div class="input-group-prepend">
+      <%= submit_tag("Search", class: 'btn btn-outline-primary') %>
+    </div>
+  </div>
+<% end %>
+
+  <div class="row">
+   <ul class="list-group">
+      <li class="list-group-item">Album </li>
+      <% @albums.each do |album| %>
+        <li class="list-group-item"><%= link_to album.title, album  %> </li>
+
+      <% end %>
+   </ul>
+   <ul class="list-group">
+   <li class="list-group-item">Artist </li>
+      <% @albums.each do |album| %>
+        <li class="list-group-item"> <%= link_to album.artist_id, album  %> </li>
+
+      <% end %>
+   </ul>
+  </div>
+</div>
