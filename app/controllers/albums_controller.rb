@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
 
   def index
-      @albums = Album.all
+      @albums = Album.filtrar(params['title'])
   end
 
   def show
