@@ -1,0 +1,29 @@
+
+
+<div class="container">
+  <div class="row"><br>
+  </div>
+  <div class="row">
+    <h3> Track List <span class="badge badge-light"> <%= @tracks.count  %> </span></h3>
+  </div>
+
+  <%= form_tag("/tracks", method: "get") do %>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text">Search for:</label>
+    </div>
+    <%= text_field_tag(:name, params['name'], class: "form-control") %>
+    <div class="input-group-prepend">
+      <%= submit_tag("Search", class: 'btn btn-outline-primary') %>
+    </div>
+  </div>
+<% end %>
+
+  <div class="row">
+   <ul class="list-group">
+  <% @tracks.each do |track| %>
+    <li class="list-group-item"> <%= link_to track.name, track %> </li>
+    <% end %>
+   </ul>
+  </div>
+</div>
