@@ -6,3 +6,6 @@
   <b> Created at: </b> <%= format(@genre.created_at) %> <br>
   <b> Updated at: </b> <%= format(@genre.updated_at) %> <br>
 </fieldset>
+
+<%= link_to 'See Tracks', genre_tracks_path(@genre), class: 'btn btn-info' %>
+<%= link_to 'New Track', new_genre_track_path(@genre), class: 'btn btn-primary' %>

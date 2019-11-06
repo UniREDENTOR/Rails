@@ -8,7 +8,7 @@ class GenresController < ApplicationController
   end
 
   def new
-    @genre = Genre.new
+    @genre = Genre.new(name: params[:id_teste])
   end
 
   def create

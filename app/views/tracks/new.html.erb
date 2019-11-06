@@ -1,0 +1,12 @@
+<h3> New Track for Genre <%= @genre.name %> </h3>
+
+
+<%= form_for(@track, url: genre_tracks_path(@genre)) do |f| %>
+  <b> Name: </b>
+    <%= f.text_field :name %>
+  <br>
+  <b> Genre ID: </b>
+    <%= f.text_field :genre_id, disabled: true %>
+  <br>
+  <%= f.submit 'Save' %>
+<% end %>
