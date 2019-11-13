@@ -6,3 +6,5 @@
   <b> Created at: </b> <%= format(@genre.created_at) %> <br>
   <b> Updated at: </b> <%= format(@genre.updated_at) %> <br>
 </fieldset>
+
+<%= link_to 'Edit', edit_genre_path(@genre), class: 'btn btn-primary' %>
