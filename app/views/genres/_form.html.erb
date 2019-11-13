@@ -1,0 +1,10 @@
+<% @genre.errors.full_messages.each do |error| %>
+  <div class="alert alert-danger" role="alert">
+    <%= error %>
+  </div>
+<% end %>
+
+<%= form_for @genre do |f| %>
+  <b> Nome: </b>  <%= f.text_field :name %>
+  <%= f.submit 'Save' %>
+<% end %>
