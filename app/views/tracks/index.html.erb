@@ -1,11 +1,13 @@
+
+
 <div class="container">
   <div class="row"><br>
   </div>
   <div class="row">
-    <h3> Artist List <span class="badge badge-light"> <%= @artists.count  %> </span></h3>
+    <h3> Track List <span class="badge badge-light"> <%= @tracks.count  %> </span></h3>
   </div>
 
-  <%= form_tag("/artists", method: "get") do %>
+  <%= form_tag("/tracks", method: "get") do %>
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <label class="input-group-text">Search for:</label>
@@ -19,9 +21,9 @@
 
   <div class="row">
    <ul class="list-group">
-      <% @artists.each do |artist| %>
-        <li class="list-group-item"> <%= link_to artist.name, artist  %> </li>
-      <% end %>
+  <% @tracks.each do |track| %>
+    <li class="list-group-item"> <%= link_to track.name, track %> </li>
+    <% end %>
    </ul>
   </div>
 </div>
